@@ -17,7 +17,16 @@ class home extends CI_Controller
 
     public function homepage()
     {
-        $this->load->view('test');
+        $this->load->view('header');
+        $this->load->view('footer');
+    }
+
+    public function search($page = 1)
+    {
+        $this->load->view('header');
+        $this->load->view('search');
+        $this->load->view('footer');
+
     }
 
     public function login()
@@ -26,9 +35,12 @@ class home extends CI_Controller
         $this->form_validation->set_rules('username', 'Username', 'trim|required');
         $this->form_validation->set_rules('password', 'Password', 'trim|required|callback_check_database');
         if ($this->form_validation->run() == FALSE) {
+            $this->load->view('header');
             $this->load->view('login');
+            $this->load->view('footer');
         } else {
-            $this->load->view('test');
+            $this->load->view('header');
+            $this->load->view('footer');
         }
     }
 

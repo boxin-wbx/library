@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="t3">
+  <component name="PublishConfigData" autoUpload="Always" serverName="vnet">
     <serverData>
-      <paths name="t3">
+      <paths name="vnet">
         <serverdata>
           <mappings>
-            <mapping deploy="/srv/library" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/library" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

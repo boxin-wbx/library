@@ -27,8 +27,8 @@ class addbook_model extends CI_Model
         $this->db->insert('book', $book);
     }
 
-    public function get() {
-        $book = $this->db->get('book',10,20);
+    public function get($page) {
+        $book = $this->db->get('book', ($page - 1) * 10, ($page - 1) * 10 + 9);
         return $book->result_array();
     }
 }

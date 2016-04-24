@@ -47,7 +47,7 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
                     <li><a href="#">主页</a></li>
-                    <li><a href="#">图书查询</a></li>
+                    <li><a href="/library/index.php/home/search">图书查询</a></li>
                     <li><a href="#">图书入库</a></li>
                     <li><a href="#">借书</a></li>
                     <li><a href="#">还书</a></li>
