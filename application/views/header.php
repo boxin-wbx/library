@@ -36,11 +36,11 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">主页</a></li>
-                    <li><a href="/library/index.php/home/search">图书查询</a></li>
+                    <li <?php if ($content=='主页') echo "class='active'";?>><a href="#">主页</a></li>
+                    <li <?php if ($content=='图书查询') echo "class='active'";?>><a href="/library/index.php/home/search">图书查询</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/library/index.php/home/login">
+                    <li <?php if ($content=='登陆') echo "class='active'";?>><a href="/library/index.php/home/login">
                             <span class="glyphicon glyphicon-log-in"></span> 登陆</a>
                     </li>
                 </ul>
@@ -63,14 +63,14 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">主页</a></li>
-                <li><a href="/library/index.php/home/search">图书查询</a></li>
-                <li><a href="#">图书入库</a></li>
-                <li><a href="#">借书</a></li>
-                <li><a href="#">还书</a></li>
-                <li><a href="#">借书证管理</a></li>
+                <li <?php if ($content=='主页') echo "class='active'";?>><a href="#">主页</a></li>
+                <li <?php if ($content=='图书查询') echo "class='active'";?>><a href="/library/index.php/home/search">图书查询</a></li>
+                <li <?php if ($content=='图书入库') echo "class='active'";?>><a href="#">图书入库</a></li>
+                <li <?php if ($content=='借书') echo "class='active'";?>><a href="#">借书</a></li>
+                <li <?php if ($content=='还书') echo "class='active'";?>><a href="#">还书</a></li>
+                <li <?php if ($content=='借书证管理') echo "class='active'";?>><a href="#">借书证管理</a></li>
                 <?php if ($_SESSION['id'] == 'root' ) :?>
-                    <li><a href="/library/index.php/admin/addAdmin">添加管理员</a></li>
+                    <li <?php if ($content=='添加管理员') echo "class='active'";?>><a href="/library/index.php/admin/addAdmin">添加管理员</a></li>
                 <?php endif; ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">

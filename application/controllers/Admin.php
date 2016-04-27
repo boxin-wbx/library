@@ -26,16 +26,25 @@ class admin extends CI_Controller
             $this->form_validation->set_rules('phone', 'phone', 'trim|required');
             if ($this->form_validation->run() == FALSE) {
 //            有待验证可靠性
+                $data['content'] = '添加管理员';
+                $this->load->view('header', $data);
                 $this->load->view('addadmin');
+                $this->load->view('footer');
             } else {
                 $id = $this->input->post('username');
                 $password = $this->input->post('password');
                 $name = $this->input->post('name');
                 $phone = $this->input->post('phone');
                 $this->home_model->set($id, $password, $name, $phone);
-                $this->load->view('test');
+                $data['content'] = '主页';
+                $this->load->view('header', $data);
+                $this->load->view('footer');
             }
-        } else $this->load->view('test');
+        } else {
+            $data['content'] = '主页';
+            $this->load->view('header', $data);
+            $this->load->view('footer');
+        }
     }
 
     function check_database($username)

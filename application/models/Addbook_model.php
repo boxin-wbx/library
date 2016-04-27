@@ -28,7 +28,12 @@ class addbook_model extends CI_Model
     }
 
     public function get($page) {
-        $book = $this->db->get('book', ($page - 1) * 10, ($page - 1) * 10 + 9);
+        $this->db->order_by('convert(title using gbk)', 'ASC');
+        $book = $this->db->get('book', 10, ($page - 1) * 10);
         return $book->result_array();
+    }
+
+    public function count() {
+        return $this->db->count_all('book') / 10;
     }
 }
