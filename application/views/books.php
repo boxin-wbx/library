@@ -31,9 +31,9 @@
     <ul class="pagination">
         <?php for ($i = 1; $i <= $num; $i++)
             if ($i != $page) {
-                echo "<li><a href='/library/index.php/home/search/$i'>$i</a></li>";
+                echo "<li><a href='?page=$i&category=$category&title=$title&publisher=$publisher&author=$author&date1=$pubdate1&date2=$pubdate2&price1=$price1&price2=$price2'>$i</a></li>";
             } else {
-                echo "<li class='active'><a href='/library/index.php/home/search/'$i>$i</a></li>";
+                echo "<li class='active'><a href='?page=$i&category=$category&title=$title&publisher=$publisher&author=$author&date1=$pubdate1&date2=$pubdate2&price1=$price1&price2=$price2'>$i</a></li>";
             }
         ?>
     </ul>

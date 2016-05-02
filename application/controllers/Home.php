@@ -23,17 +23,64 @@ class home extends CI_Controller
         $this->load->view('footer');
     }
 
-    public function search($page = 1)
+    public function search()
     {
+        $page = $this->input->get('page');
+        if ($page == null) $page = 1;
+        $title = $this->input->get('title');
+        $category = $this->input->get('category');
+        $publisher = $this->input->get('publisher');
+        $author = $this->input->get('author');
+        $pubdate1 = $this->input->get('date1');
+        $pubdate2 = $this->input->get('date2');
+        $price1 = $this->input->get('price1');
+        $price2 = $this->input->get('price2');
         $data['content'] = '图书查询';
+        $data['author']  = $author;
+        $data['category'] = $category;
+        $data['title'] = $title;
+        $data['publisher'] = $publisher;
+        $data['pubdate1'] = $pubdate1;
+        $data['pubdate2'] = $pubdate2;
+        $data['price1'] = $price1;
+        $data['price2'] = $price2;
         $this->load->view('header', $data);
-        $this->load->view('search');
+        $this->load->view('search', $data);
         $data['book'] = $this->addbook_model->get($page);
         $data['page'] = $page;
-        $data['num']  = $this->addbook_model->count();
+        $data['num'] = $this->addbook_model->count();
         $this->load->view('books', $data);
         $this->load->view('footer');
+    }
 
+    public function search_result()
+    {
+        $page = $this->input->get('page');
+        if ($page == null) $page = 1;
+        $pubdate1 = $this->input->get('date1');
+        $pubdate2 = $this->input->get('date2');
+        $price1 = $this->input->get('price1');
+        $price2 = $this->input->get('price2');
+        $title = $this->input->get('title');
+        $category = $this->input->get('category');
+        $publisher = $this->input->get('publisher');
+        $author = $this->input->get('author');
+        $data['author']  = $author;
+        $data['category'] = $category;
+        $data['title'] = $title;
+        $data['publisher'] = $publisher;
+        $data['content'] = '图书查询';
+        $data['pubdate1'] = $pubdate1;
+        $data['pubdate2'] = $pubdate2;
+        $data['price1'] = $price1;
+        $data['price2'] = $price2;
+        $this->load->view('header', $data);
+        $this->load->view('search', $data);
+        $data['book'] = $this->addbook_model->search($page);
+        $data['page'] = $page;
+        $data['num'] = $this->addbook_model->count_result();
+        $this->load->view('books', $data);
+        $this->load->view('footer');
     }
 
     public function login()
