@@ -61,11 +61,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">简易图书馆管理系统</a>
+            <a class="navbar-brand" href="/library/index.php/home/homepage">简易图书馆管理系统</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li <?php if ($content=='主页') echo "class='active'";?>><a href="#">主页</a></li>
+                <li <?php if ($content=='主页') echo "class='active'";?>><a href="/library/index.php/home/homepage">主页</a></li>
                 <li <?php if ($content=='图书查询') echo "class='active'";?>><a href="/library/index.php/home/search">图书查询</a></li>
                 <li <?php if ($content=='图书入库') echo "class='active'";?>><a href="/library/index.php/admin/add">图书入库</a></li>
                 <li <?php if ($content=='借书') echo "class='active'";?>><a href="/library/index.php/admin/borrowbook">借书</a></li>

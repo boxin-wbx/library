@@ -20,6 +20,7 @@ class home extends CI_Controller
     {
         $data['content'] = '主页';
         $this->load->view('header', $data);
+        $this->load->view('page');
         $this->load->view('footer');
     }
 
