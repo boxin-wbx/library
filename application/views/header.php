@@ -10,6 +10,8 @@
     <!-- Bootstrap -->
     <link href="/library/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="/library/assets/css/signin.css" rel="stylesheet">
+    <link href="/library/assets/css/file.css" rel="stylesheet">
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -65,10 +67,17 @@
             <ul class="nav navbar-nav">
                 <li <?php if ($content=='主页') echo "class='active'";?>><a href="#">主页</a></li>
                 <li <?php if ($content=='图书查询') echo "class='active'";?>><a href="/library/index.php/home/search">图书查询</a></li>
-                <li <?php if ($content=='图书入库') echo "class='active'";?>><a href="#">图书入库</a></li>
-                <li <?php if ($content=='借书') echo "class='active'";?>><a href="#">借书</a></li>
-                <li <?php if ($content=='还书') echo "class='active'";?>><a href="#">还书</a></li>
-                <li <?php if ($content=='借书证管理') echo "class='active'";?>><a href="#">借书证管理</a></li>
+                <li <?php if ($content=='图书入库') echo "class='active'";?>><a href="/library/index.php/admin/add">图书入库</a></li>
+                <li <?php if ($content=='借书') echo "class='active'";?>><a href="/library/index.php/admin/borrowbook">借书</a></li>
+                <li <?php if ($content=='还书') echo "class='active'";?>><a href="/library/index.php/admin/returnbook">还书</a></li>
+                <li class="dropdown <?php if ($content=='借书证管理') echo 'active';?> ">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">借书证管理
+                <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/library/index.php/admin/addcard">增加借书证</a></li>
+                        <li><a href="/library/index.php/admin/deletecard">删除借书证</a></li>
+                    </ul>
+                </li>
                 <?php if ($_SESSION['id'] == 'root' ) :?>
                     <li <?php if ($content=='添加管理员') echo "class='active'";?>><a href="/library/index.php/admin/addAdmin">添加管理员</a></li>
                 <?php endif; ?>
